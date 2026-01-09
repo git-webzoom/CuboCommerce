@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { X, Phone, Mail, Clock, Smartphone, Globe, ShoppingCart, MessageSquare, Save, Trash2, Send, Tag, CreditCard } from 'lucide-react';
+import { X, Mail, Smartphone, Globe, MessageSquare, Save, Trash2, Tag } from 'lucide-react';
 import styles from './LeadModal.module.css';
 
 interface LeadModalProps {
