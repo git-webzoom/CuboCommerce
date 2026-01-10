@@ -1,0 +1,85 @@
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tabs-list {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    gap: 2rem;
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.tabs-list::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-trigger {
+    padding: 1rem 0.5rem;
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.tab-trigger:hover {
+    color: var(--color-text-main);
+}
+
+.tab-trigger.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Dark mode override for better contrast */
+.dark .tab-trigger.active {
+    color: #60a5fa;
+    /* A bright blue that stands out on dark backgrounds */
+}
+
+.tab-trigger.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 2px 2px 0 0;
+}
+
+.dark .tab-trigger.active::after {
+    background-color: #60a5fa;
+}
+
+.tab-content {
+    animation: fadeIn var(--transition-fast);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .tabs-list {
+        gap: 1.5rem;
+    }
+}
